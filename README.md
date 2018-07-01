@@ -4,7 +4,7 @@
 Show the developer capacity from january to july:
 ![Usage](usage.png)
 
-###config
+### config
 ```
 abs:config DEV set 0 [Firstname1 Lastname1]
 abs:config DEV set 0 [Firstname2 Lastname2]
