@@ -25,21 +25,6 @@ class AbsenceIoCommand extends ContainerAwareCommand
      */
     protected $teamMapperService;
 
-    /**
-     * @var string[]
-     */
-    protected $dev;
-
-    /**
-     * @var string[]
-     */
-    protected $pm;
-
-    /**
-     * @var string[]
-     */
-    protected $tl;
-
     protected function configure()
     {
         $this
@@ -60,9 +45,6 @@ class AbsenceIoCommand extends ContainerAwareCommand
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->dev = $this->getContainer()->getParameter('dev');
-        $this->tl = $this->getContainer()->getParameter('tl');
-        $this->pm = $this->getContainer()->getParameter('pm');
         $this->dateHelper = $this->getContainer()->get(DateHelper::class);
         $this->teamMapperService = $this->getContainer()->get(TeamMapperService::class);
     }

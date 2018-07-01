@@ -145,7 +145,7 @@ include 'bin/alfred.php';</string>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
