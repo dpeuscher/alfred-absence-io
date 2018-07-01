@@ -1,1 +1,1 @@
-# alfred-absenceio
+# alfred-absence-io

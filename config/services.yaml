@@ -1,0 +1,56 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    configValues:
+      - DEV[]
+      - TL[]
+      - PM[]
+      - LOCATION
+      - ABSENCEID
+      - ABSENCEKEY
+      - ABSENCEENDPOINT
+    dev: '%env(json:DEV)%'
+    tl: '%env(json:TL)%'
+    pm: '%env(json:PM)%'
+    location: '%env(string:LOCATION)%'
+    absence_id: '%env(string:ABSENCEID)%'
+    absence_key: '%env(string:ABSENCEKEY)%'
+    absence_end_point: '%env(string:ABSENCEENDPOINT)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    Dpeuscher\AlfredAbsenceIo\Command\:
+        resource: '../src/Command'
+
+    Dpeuscher\Util\Date\DateHelper:
+        public: true
+
+    Dpeuscher\AbsenceIo\Alfred\AlfredTemplate:
+        public: true
+
+    Dpeuscher\AlfredSymfonyTools\Alfred\WorkflowHelper:
+        public: true
+
+    Dpeuscher\AbsenceIo\Service\AbsenceService:
+        public: true
+        arguments:
+            $absenceKey: '%absence_key%'
+            $absenceId: '%absence_id%'
+            $absenceEndPoint: '%absence_end_point%'
+
+    Dpeuscher\AbsenceIo\Service\TeamMapperService:
+        public: true
+        arguments:
+            $pm: '%pm%'
+            $tl: '%tl%'
+            $dev: '%dev%'
+            $location: '%location%'
