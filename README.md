@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dpeuscher/alfred-absence-io.svg?branch=master)](https://travis-ci.org/dpeuscher/alfred-absence-io)
+[![Build Status](https://travis-ci.org/dpeuscher/alfred-absence-io.svg?branch=master)](https://travis-ci.org/dpeuscher/alfred-absence-io)[![codecov](https://codecov.io/gh/dpeuscher/alfred-absence-io/branch/master/graph/badge.svg)](https://codecov.io/gh/dpeuscher/alfred-absence-io)
 # alfred-absence-io
 
 Show the developer capacity from january to july:

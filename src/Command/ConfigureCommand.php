@@ -8,4 +8,8 @@ namespace Dpeuscher\AlfredAbsenceIo\Command;
  */
 class ConfigureCommand extends \Dpeuscher\AlfredSymfonyTools\Command\ConfigureCommand
 {
+    protected function configure()
+    {
+        parent::configure();
+    }
 }
