@@ -8,7 +8,6 @@ use Dpeuscher\AlfredAbsenceIo\Kernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
-use Symfony\Component\DependencyInjection\Container;
 
 /**
  * @category  alfred-absence-io
@@ -17,23 +16,23 @@ use Symfony\Component\DependencyInjection\Container;
  */
 class AbsenceIoCommandTest extends KernelTestCase
 {
-    public function testExecute()
+    public function testExecute(): void
     {
         $_ENV['KERNEL_CLASS'] = Kernel::class;
-        $_ENV['DEV'] = "[]";
-        $_ENV['PM'] = "[]";
-        $_ENV['TL'] = "[]";
-        $_ENV['LOCATION'] = "";
-        $_ENV['ABSENCEID'] = "";
-        $_ENV['ABSENCEKEY'] = "";
-        $_ENV['ABSENCEENDPOINT'] = "https://app.absence.io/api/v2/";
+        $_ENV['DEV'] = '[]';
+        $_ENV['PM'] = '[]';
+        $_ENV['TL'] = '[]';
+        $_ENV['LOCATION'] = '';
+        $_ENV['ABSENCEID'] = '';
+        $_ENV['ABSENCEKEY'] = '';
+        $_ENV['ABSENCEENDPOINT'] = 'https://app.absence.io/api/v2/';
         $kernel = self::bootKernel();
         $application = new Application($kernel);
 
         $command = new AbsenceIoCommand();
         $application->add($command);
 
-        $fixtureFolder = realpath(dirname(__DIR__) . '/fixtures/');
+        $fixtureFolder = realpath(\dirname(__DIR__) . '/fixtures/');
         $activeMock = ['post_locations.json', 'post_absences.json'];
 
         $absenceServiceMock = $this->getMockBuilder(AbsenceService::class)->setConstructorArgs(['', '', ''])
@@ -42,7 +41,7 @@ class AbsenceIoCommandTest extends KernelTestCase
             ->method('executeCall')
             ->withAnyParameters()
             ->will($this->returnCallback(
-                function (string $uri, array $fields, string $method) use ($fixtureFolder, &$activeMock) {
+                function () use ($fixtureFolder, &$activeMock) {
                     $mockFile = array_shift($activeMock);
                     $data = json_decode(file_get_contents($fixtureFolder . '/' . $mockFile),
                         JSON_OBJECT_AS_ARRAY);
