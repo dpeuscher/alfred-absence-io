@@ -25,7 +25,7 @@ class AbsenceIoCommand extends ContainerAwareCommand
      */
     protected $teamMapperService;
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('absence')
@@ -43,7 +43,7 @@ class AbsenceIoCommand extends ContainerAwareCommand
      * @param OutputInterface $output
      * @throws \Exception
      */
-    protected function initialize(InputInterface $input, OutputInterface $output)
+    protected function initialize(InputInterface $input, OutputInterface $output): void
     {
         $this->dateHelper = $this->getContainer()->get(DateHelper::class);
         $this->teamMapperService = $this->getContainer()->get(TeamMapperService::class);
@@ -55,11 +55,11 @@ class AbsenceIoCommand extends ContainerAwareCommand
      * @return void
      * @throws \Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $fromMonth = $input->getArgument('fromMonth');
         $toMonth = $input->getArgument('toMonth');
-        list($begin, $end) = $this->dateHelper->buildDateTimeRangeFromTwoInputs($fromMonth, $toMonth);
+        [$begin, $end] = $this->dateHelper->buildDateTimeRangeFromTwoInputs($fromMonth, $toMonth);
 
         $output->write($this->teamMapperService->checkTeamAvailability($begin, $end));
     }
