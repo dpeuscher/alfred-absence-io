@@ -2,13 +2,13 @@ language: php
 php:
   - '7.1'
   - '7.2'
-  - nightly
+#  - nightly
 
 install:
   - composer install
 
 script:
-  - SYMFONY_DEPRECATIONS_HELPER='/AbsenceIoCommandTest::testExecute/' vendor/bin/phpunit -v --coverage-clover=coverage.xml
+  - vendor/bin/phpunit -v --coverage-clover=coverage.xml
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
