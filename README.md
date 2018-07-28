@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/dpeuscher/alfred-absence-io.svg?branch=master)](https://travis-ci.org/dpeuscher/alfred-absence-io)[![codecov](https://codecov.io/gh/dpeuscher/alfred-absence-io/branch/master/graph/badge.svg)](https://codecov.io/gh/dpeuscher/alfred-absence-io)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io?ref=badge_shield)
 # alfred-absence-io
 
 Show the developer capacity from january to july:
@@ -29,3 +30,6 @@ LOCATION is the location in which the team works (e.g. München)
 ABSENCEID and ABSENCEKEY can be obtained in the absence.io login area "Profile" -> "Integrations" -> "Generate API Key"
 
 ABSENCEENDPOINT can also be configured. It might change but for now it can stay on https://app.absence.io/api/v2/ 
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io?ref=badge_large)
