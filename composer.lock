@@ -133,16 +133,16 @@
         },
         {
             "name": "dpeuscher/util",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpeuscher/util.git",
-                "reference": "f2d57d5be3b701b4b6f30f2e01584e6f5fb8672d"
+                "reference": "cfa06a8457b26962b41e0a9329affc3b3cc2fe6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpeuscher/util/zipball/f2d57d5be3b701b4b6f30f2e01584e6f5fb8672d",
-                "reference": "f2d57d5be3b701b4b6f30f2e01584e6f5fb8672d",
+                "url": "https://api.github.com/repos/dpeuscher/util/zipball/cfa06a8457b26962b41e0a9329affc3b3cc2fe6d",
+                "reference": "cfa06a8457b26962b41e0a9329affc3b3cc2fe6d",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
                 }
             ],
             "description": "Code that extends existing basic PHP-functionality",
-            "time": "2018-09-30T15:16:19+00:00"
+            "time": "2018-10-03T16:26:42+00:00"
         },
         {
             "name": "ircmaxell/random-lib",
