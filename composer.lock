@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "edbfb53e356f5d674f36ecfdc0872d9f",
+    "content-hash": "06060862d05d526a4c1008a5a7b461e8",
     "packages": [
         {
             "name": "dflydev/hawk",

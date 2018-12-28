@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/dpeuscher/alfred-absence-io.svg?branch=master)](https://travis-ci.org/dpeuscher/alfred-absence-io)[![codecov](https://codecov.io/gh/dpeuscher/alfred-absence-io/branch/master/graph/badge.svg)](https://codecov.io/gh/dpeuscher/alfred-absence-io)
+[![Build Status](https://travis-ci.org/dpeuscher/alfred-absence-io.svg?branch=master)](https://travis-ci.org/dpeuscher/alfred-absence-io)
+[![codecov](https://codecov.io/gh/dpeuscher/alfred-absence-io/branch/master/graph/badge.svg)](https://codecov.io/gh/dpeuscher/alfred-absence-io)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdpeuscher%2Falfred-absence-io?ref=badge_shield)
 # alfred-absence-io
 
