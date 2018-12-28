@@ -7,14 +7,14 @@
         "ext-iconv": "*",
         "dpeuscher/lib-absence-io": "^1.0.0",
         "dpeuscher/util": "^1.0.0",
-        "symfony/console": "^4.1",
+        "symfony/console": "^4.2",
         "symfony/flex": "^1.0",
-        "symfony/framework-bundle": "^4.1",
-        "symfony/lts": "^4@dev",
-        "symfony/yaml": "^4.1"
+        "symfony/framework-bundle": "^4.2",
+        "symfony/yaml": "^4.2"
     },
     "require-dev": {
-        "symfony/dotenv": "^4.1",
+        "symfony/dotenv": "^4.2",
+        "symfony/debug": "dev-master",
         "symfony/test-pack": "^1.0",
         "phpunit/phpunit": "^7.2",
         "ext-json": "*"
