@@ -2,9 +2,14 @@
 
 namespace Dpeuscher\AlfredAbsenceIo\Tests\Command;
 
+use Alfred\Workflows\Workflow;
+use Dpeuscher\AbsenceIo\Alfred\AlfredTemplate;
 use Dpeuscher\AbsenceIo\Service\AbsenceService;
+use Dpeuscher\AbsenceIo\Service\TeamMapperService;
 use Dpeuscher\AlfredAbsenceIo\Command\AbsenceIoCommand;
 use Dpeuscher\AlfredAbsenceIo\Kernel;
+use Dpeuscher\AlfredSymfonyTools\Alfred\WorkflowHelper;
+use Dpeuscher\Util\Date\DateHelper;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -29,9 +34,6 @@ class AbsenceIoCommandTest extends KernelTestCase
         $kernel = self::bootKernel();
         $application = new Application($kernel);
 
-        $command = new AbsenceIoCommand();
-        $application->add($command);
-
         $fixtureFolder = realpath(\dirname(__DIR__) . '/fixtures/');
         $activeMock = ['post_locations.json', 'post_absences.json'];
 
@@ -48,8 +50,13 @@ class AbsenceIoCommandTest extends KernelTestCase
                     return [$data['response'], $data['headerSize']];
                 }
             ));
+        /** @var AbsenceService $absenceServiceMock */
 
-        $kernel->getContainer()->set(AbsenceService::class, $absenceServiceMock);
+        $teamMapperService = new TeamMapperService([], [], [], '', $absenceServiceMock,
+            new AlfredTemplate(new WorkflowHelper('/tmp/', new Workflow())));
+
+        $command = new AbsenceIoCommand(new DateHelper(), $teamMapperService);
+        $application->add($command);
 
         $command = $application->find('absence');
         $commandTester = new CommandTester($command);

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="MessDetector">
+    <phpmd_settings>
+      <MessDetectorConfiguration tool_path="C:/flug.modules/main/vendor/bin/phpmd" />
+    </phpmd_settings>
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration tool_path="$USER_HOME$/PhpStormProjects/flugvergleich2/vendor/bin/phpcs" />
+    </phpcs_settings>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
@@ -65,6 +75,12 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/panther" />
+      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
